@@ -88,3 +88,13 @@ fn main() {
     let output: String = winner.iter().map(|byte| *byte as char).collect();
     println!("({}) {}", score, output);
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_correctness() {
+
+    }
+}

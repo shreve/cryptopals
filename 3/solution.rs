@@ -1,3 +1,5 @@
+#[allow(dead_code)]
+
 use std::{env, process};
 
 // Properly decode hex into bytes
@@ -43,6 +45,7 @@ fn english_score(input: &String) -> usize {
 
 fn decrypt(input: String) -> String {
     let bytes = hex_to_bytes(&input);
+    println!("{:?}", bytes);
     let dict: Vec<u8> = (0x00..0xFF).collect();
 
     let mut high_score = 0;
@@ -79,5 +82,16 @@ fn main() {
             println!("Program needs one input");
             process::exit(1);
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_correctness() {
+        let output = decrypt("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736".to_string());
+        assert_eq!(output, "Cooking MC's like a pound of bacon")
     }
 }
