@@ -5,3 +5,4 @@ authors = ["Jacob Evan Shreve <jacob@shreve.io>"]
 edition = "2018"
 
 [dependencies]
+openssl = { version = "0.10", features = ["vendored"] }
