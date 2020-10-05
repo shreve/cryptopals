@@ -1,2 +1,2 @@
 max_width = 80 # Always wrap at 80
-# format_strings = true # Break strings if needed
+format_strings = true # Break strings if needed

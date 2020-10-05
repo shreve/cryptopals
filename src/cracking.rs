@@ -156,7 +156,6 @@ fn find_key_length(data: &Bytes, count: usize) -> Vec<usize> {
 
 #[cfg(test)]
 mod tests {
-
     #[test]
     fn test_english_score() {
         assert_eq!(

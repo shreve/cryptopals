@@ -1,4 +1,4 @@
-use super::Bytes;
+use crate::Bytes;
 
 pub fn repeating_key_cipher(input: &Bytes, key: &Bytes) -> Bytes {
     let keylen = key.len();

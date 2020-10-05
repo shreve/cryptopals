@@ -1,4 +1,4 @@
-use super::Bytes;
+use crate::Bytes;
 use std::{char, u8};
 
 pub fn hex_to_bytes(input: &str) -> Bytes {
@@ -35,8 +35,8 @@ pub fn bytes_to_b64(input: Bytes) -> String {
         .chain(0x2F..0x30)
         .collect();
 
-    let mut out: Bytes =
-        vec![0; (input.len() as f64 * 4.0 / 3.0).ceil() as usize];
+    let length = (input.len() as f64 * 4.0 / 3.0).ceil() as usize;
+    let mut out: Bytes = vec![ 0; length ];
 
     // Use separate index j to keep track of output byte index
     let mut j = 0;
@@ -124,7 +124,6 @@ pub fn hex_to_b64(input: &str) -> String {
 
 #[cfg(test)]
 mod test {
-
     #[test]
     fn test_b64_to_bytes() {
         assert_eq!(
